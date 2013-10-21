@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "HWPodcastDetailsController.h"
 
-@interface HWMainViewController : UIViewController
+@interface HWMainViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end

@@ -13,9 +13,13 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    
+    HWMainViewController *mainViewController = [[HWMainViewController alloc] init];
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:mainViewController];
+    navigationController.topViewController.title = @"Podcasts";
+    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    HWMainViewController *vc = [[HWMainViewController alloc] init];
-    self.window.rootViewController = vc;
+    self.window.rootViewController = navigationController;
     
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor blackColor];

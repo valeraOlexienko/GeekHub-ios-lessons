@@ -16,14 +16,7 @@
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(50, 20, 300, 30)];
-        [label setText:@"Hello World (Programatically)"];
-        [self.view addSubview:label];
-    }
-    return self;
+    return [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
 }
 
 - (void)viewDidLoad
@@ -36,6 +29,32 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+// Table view stuff
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 4;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *id = @"cell_ID";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:id];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
+    }
+    cell.textLabel.text = [NSString stringWithFormat:@"Podcast %i", indexPath.row];
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    return cell;
+}
+
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    HWPodcastDetailsController *detailsController = [[HWPodcastDetailsController alloc] initWithPodcastName: [NSString stringWithFormat:@"Podcast %i", indexPath.row]];
+    [self.navigationController pushViewController:detailsController animated:YES];
 }
 
 @end
