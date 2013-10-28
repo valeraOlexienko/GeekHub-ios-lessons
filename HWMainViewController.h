@@ -9,7 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "HWPodcastDetailsController.h"
 
-@interface HWMainViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@interface HWMainViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>{
+    IBOutlet UITextField *textField;
+    IBOutlet UITableView *tableView;
+}
+
+- (IBAction)change:(id)sender;
 
 @end

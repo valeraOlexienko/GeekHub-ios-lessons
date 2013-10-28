@@ -21,6 +21,9 @@
 		2A52A720180742D90013A98D /* HelloWorldTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A52A71F180742D90013A98D /* HelloWorldTests.m */; };
 		2A52A72C180743260013A98D /* HWMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A52A72A180743260013A98D /* HWMainViewController.m */; };
 		2A52A72D180743260013A98D /* HWMainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A52A72B180743260013A98D /* HWMainViewController.xib */; };
+		2A7DED80181F0071000A4ABA /* GDataXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A7DED7F181F0071000A4ABA /* GDataXMLNode.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		2A7DED82181F00ED000A4ABA /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A7DED81181F00ED000A4ABA /* libxml2.dylib */; };
+		2A7DED84181F040A000A4ABA /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A7DED83181F040A000A4ABA /* SystemConfiguration.framework */; };
 		2AEEB3E31815D368008B53F3 /* HWPodcastDetailsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AEEB3E11815D368008B53F3 /* HWPodcastDetailsController.m */; };
 		2AEEB3E41815D368008B53F3 /* HWPodcastDetailsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2AEEB3E21815D368008B53F3 /* HWPodcastDetailsController.xib */; };
 /* End PBXBuildFile section */
@@ -55,6 +58,10 @@
 		2A52A729180743260013A98D /* HWMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HWMainViewController.h; path = ../HWMainViewController.h; sourceTree = "<group>"; };
 		2A52A72A180743260013A98D /* HWMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HWMainViewController.m; path = ../HWMainViewController.m; sourceTree = "<group>"; };
 		2A52A72B180743260013A98D /* HWMainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HWMainViewController.xib; path = ../HWMainViewController.xib; sourceTree = "<group>"; };
+		2A7DED7E181F0071000A4ABA /* GDataXMLNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDataXMLNode.h; sourceTree = "<group>"; };
+		2A7DED7F181F0071000A4ABA /* GDataXMLNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDataXMLNode.m; sourceTree = "<group>"; };
+		2A7DED81181F00ED000A4ABA /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
+		2A7DED83181F040A000A4ABA /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		2AEEB3E01815D368008B53F3 /* HWPodcastDetailsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HWPodcastDetailsController.h; path = ../HWPodcastDetailsController.h; sourceTree = "<group>"; };
 		2AEEB3E11815D368008B53F3 /* HWPodcastDetailsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HWPodcastDetailsController.m; path = ../HWPodcastDetailsController.m; sourceTree = "<group>"; };
 		2AEEB3E21815D368008B53F3 /* HWPodcastDetailsController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HWPodcastDetailsController.xib; path = ../HWPodcastDetailsController.xib; sourceTree = "<group>"; };
@@ -65,6 +72,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A7DED82181F00ED000A4ABA /* libxml2.dylib in Frameworks */,
+				2A7DED84181F040A000A4ABA /* SystemConfiguration.framework in Frameworks */,
 				2A52A6FD180742D90013A98D /* CoreGraphics.framework in Frameworks */,
 				2A52A6FF180742D90013A98D /* UIKit.framework in Frameworks */,
 				2A52A6FB180742D90013A98D /* Foundation.framework in Frameworks */,
@@ -106,6 +115,8 @@
 		2A52A6F9180742D90013A98D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2A7DED83181F040A000A4ABA /* SystemConfiguration.framework */,
+				2A7DED81181F00ED000A4ABA /* libxml2.dylib */,
 				2A52A6FA180742D90013A98D /* Foundation.framework */,
 				2A52A6FC180742D90013A98D /* CoreGraphics.framework */,
 				2A52A6FE180742D90013A98D /* UIKit.framework */,
@@ -117,6 +128,8 @@
 		2A52A700180742D90013A98D /* HelloWorld */ = {
 			isa = PBXGroup;
 			children = (
+				2A7DED7E181F0071000A4ABA /* GDataXMLNode.h */,
+				2A7DED7F181F0071000A4ABA /* GDataXMLNode.m */,
 				2AEEB3E01815D368008B53F3 /* HWPodcastDetailsController.h */,
 				2AEEB3E11815D368008B53F3 /* HWPodcastDetailsController.m */,
 				2AEEB3E21815D368008B53F3 /* HWPodcastDetailsController.xib */,
@@ -259,9 +272,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				2A52A72C180743260013A98D /* HWMainViewController.m in Sources */,
-				2A52A707180742D90013A98D /* main.m in Sources */,
+				2A7DED80181F0071000A4ABA /* GDataXMLNode.m in Sources */,
 				2AEEB3E31815D368008B53F3 /* HWPodcastDetailsController.m in Sources */,
 				2A52A70B180742D90013A98D /* HWAppDelegate.m in Sources */,
+				2A52A707180742D90013A98D /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -383,6 +397,11 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HelloWorld/HelloWorld-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(SDKROOT)/usr/include/libxml2",
+				);
 				INFOPLIST_FILE = "HelloWorld/HelloWorld-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -399,6 +418,11 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HelloWorld/HelloWorld-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(SDKROOT)/usr/include/libxml2",
+				);
 				INFOPLIST_FILE = "HelloWorld/HelloWorld-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
