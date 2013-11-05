@@ -8,6 +8,7 @@
 
 #import "HWMainViewController.h"
 #import "GDataXMLNode.h"
+#import "UIImageView+WebCache.h"
 
 @interface HWMainViewController ()
 
@@ -60,6 +61,7 @@
         return;
     }
     _items = [self.document nodesForXPath:@"//channel/item" error:&error];
+    [tableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning
@@ -95,6 +97,18 @@
         GDataXMLElement *title = titles[0];
         cellName = title.stringValue;
     }
+    
+    NSArray *images = [item elementsForName:@"itunes:image"];
+    NSString *cellImage = @"";
+    if (images.count > 0) {
+        GDataXMLElement *image = images[0];
+        GDataXMLNode *href = [image attributeForName:@"href"];
+        cellImage = href.stringValue;
+    }
+    
+    [cell.imageView setImageWithURL:[NSURL URLWithString:cellImage]
+                   placeholderImage:[UIImage imageNamed:@"placeholder.png"]];
+    
     cell.textLabel.text = [NSString stringWithFormat:cellName, indexPath.row];
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     return cell;
