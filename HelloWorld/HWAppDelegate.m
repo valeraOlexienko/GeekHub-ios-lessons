@@ -7,16 +7,16 @@
 //
 
 #import "HWAppDelegate.h"
-#import "HWMainViewController.h"
+#import "HWResourceViewController.h"
 
 @implementation HWAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     
-    HWMainViewController *mainViewController = [[HWMainViewController alloc] init];
-    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:mainViewController];
-    navigationController.topViewController.title = @"Podcasts";
+    HWResourceViewController *resourceViewController = [[HWResourceViewController alloc] init];
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:resourceViewController];
+    navigationController.topViewController.title = @"Podcast URL";
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.rootViewController = navigationController;

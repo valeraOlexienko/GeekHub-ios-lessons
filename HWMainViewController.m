@@ -7,61 +7,36 @@
 //
 
 #import "HWMainViewController.h"
-#import "GDataXMLNode.h"
 #import "UIImageView+WebCache.h"
+#import "HWPodcastModel.h"
 
 @interface HWMainViewController ()
 
-@property (strong, nonatomic) GDataXMLDocument *document;
-@property (strong, nonatomic) NSArray *items;
-@property (strong, nonatomic) NSString *url;
-
 @end
 
-@implementation HWMainViewController
+@implementation HWMainViewController{
+    NSArray *podcastItems;
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     return [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
 }
 
+- (id)initWithPodcasts:(NSArray *)podcasts
+{
+    self = [super init];
+    if (self){
+        podcastItems = podcasts;
+    }
+    return self;
+    
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    [self grabPodcasts];
-}
-
-- (void)grabPodcasts
-{
-    if (!_url){
-        UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"Error!"
-                                                          message:@"Please provide url to grab podcasts"
-                                                         delegate:nil
-                                                cancelButtonTitle:@"OK"
-                                                otherButtonTitles:nil];
-        [message show];
-    }
-    NSURL *url = [NSURL URLWithString:_url];
-    NSURLRequest *request = [NSURLRequest requestWithURL:url];
-    
-    NSURLResponse *response = nil;
-    NSError *error = nil;
-    NSData *data = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
-    
-    if (error) {
-        NSLog(@"%@", error);
-        return;
-    }
-    
-    self.document = [[GDataXMLDocument alloc] initWithData:data options:0 error:&error];
-    
-    if (error) {
-        NSLog(@"%@", error);
-        return;
-    }
-    _items = [self.document nodesForXPath:@"//channel/item" error:&error];
-    [tableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning
@@ -70,17 +45,11 @@
     // Dispose of any resources that can be recreated.
 }
 
-//Apply Item handler
-- (IBAction)change:(id)sender
-{
-    _url = textField.text;
-   [self grabPodcasts];
-}
+#pragma mark - TableView delegate stuff -
 
-// Table view stuff
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return _items.count;
+    return podcastItems.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -90,27 +59,14 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
     }
-    GDataXMLElement *item = _items[indexPath.row];
-    NSString *cellName = @"[default]";
-    NSArray *titles = [item elementsForName:@"title"];
-    if (titles.count > 0) {
-        GDataXMLElement *title = titles[0];
-        cellName = title.stringValue;
-    }
+    HWPodcastModel *p = podcastItems[indexPath.row];
     
-    NSArray *images = [item elementsForName:@"itunes:image"];
-    NSString *cellImage = @"";
-    if (images.count > 0) {
-        GDataXMLElement *image = images[0];
-        GDataXMLNode *href = [image attributeForName:@"href"];
-        cellImage = href.stringValue;
-    }
-    
-    [cell.imageView setImageWithURL:[NSURL URLWithString:cellImage]
+    [cell.imageView setImageWithURL:[NSURL URLWithString:p.imageUrl]
                    placeholderImage:[UIImage imageNamed:@"placeholder.png"]];
     
-    cell.textLabel.text = [NSString stringWithFormat:cellName, indexPath.row];
+    cell.textLabel.text = [NSString stringWithFormat:p.title, indexPath.row];
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+
     return cell;
 }
 
@@ -119,12 +75,13 @@
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     HWPodcastDetailsController *detailsController = [[HWPodcastDetailsController alloc] initWithPodcastName: [NSString stringWithFormat:@"Podcast %li", indexPath.row]];
+    self.navigationController.title = @"Podcast %li";
     [self.navigationController pushViewController:detailsController animated:YES];
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section
 {
-    return [NSString stringWithFormat:@"Number of podcasts: %li", _items.count];
+    return [NSString stringWithFormat:@"Number of podcasts: %li", podcastItems.count];
 }
 
 @end
