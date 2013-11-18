@@ -9,13 +9,16 @@
 #import "HWPodcastDetailsController.h"
 
 @interface HWPodcastDetailsController ()
-@property (weak, nonatomic) IBOutlet UILabel *podcastLable;
 
 @end
 
-@implementation HWPodcastDetailsController
+@implementation HWPodcastDetailsController {
+    
+    __weak IBOutlet UILabel *podcastTitle;
+    __weak IBOutlet UITextView *descriptionTextView;
+}
 
-NSString *podcastName = nil;
+HWPodcastModel *podcast = nil;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -26,11 +29,11 @@ NSString *podcastName = nil;
     return self;
 }
 
-- (id)initWithPodcastName:(NSString *)podcastNameOrNil
+- (id)initWithPodcast:(HWPodcastModel *)podcastOrNil
 {
     self = [super init];
     if (self) {
-        podcastName = podcastNameOrNil;
+        podcast = podcastOrNil;
     }
     return self;
 }
@@ -39,7 +42,9 @@ NSString *podcastName = nil;
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    [_podcastLable setText:podcastName];
+    
+    [podcastTitle setText:podcast.title];
+    [descriptionTextView setText:podcast.description];
 }
 
 - (void)didReceiveMemoryWarning

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2A008F1B183775FB004FBA75 /* HWPodcastModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A008F1A183775FB004FBA75 /* HWPodcastModel.m */; };
+		2A2C1365183A6AFB00C2EC89 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A2C1364183A6AFB00C2EC89 /* MBProgressHUD.m */; };
 		2A52A6FB180742D90013A98D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A52A6FA180742D90013A98D /* Foundation.framework */; };
 		2A52A6FD180742D90013A98D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A52A6FC180742D90013A98D /* CoreGraphics.framework */; };
 		2A52A6FF180742D90013A98D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A52A6FE180742D90013A98D /* UIKit.framework */; };
@@ -60,6 +61,8 @@
 /* Begin PBXFileReference section */
 		2A008F19183775FB004FBA75 /* HWPodcastModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWPodcastModel.h; sourceTree = "<group>"; };
 		2A008F1A183775FB004FBA75 /* HWPodcastModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWPodcastModel.m; sourceTree = "<group>"; };
+		2A2C1363183A6AFB00C2EC89 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		2A2C1364183A6AFB00C2EC89 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		2A52A6F7180742D90013A98D /* HelloWorld.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HelloWorld.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A52A6FA180742D90013A98D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		2A52A6FC180742D90013A98D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -154,6 +157,8 @@
 			children = (
 				2A7DED7E181F0071000A4ABA /* GDataXMLNode.h */,
 				2A7DED7F181F0071000A4ABA /* GDataXMLNode.m */,
+				2A2C1363183A6AFB00C2EC89 /* MBProgressHUD.h */,
+				2A2C1364183A6AFB00C2EC89 /* MBProgressHUD.m */,
 				2AF0D1B01828DBD10046B74E /* SDWebImage */,
 				2A71EB71182FC7A100185893 /* Reachability */,
 			);
@@ -416,6 +421,7 @@
 			files = (
 				2A52A72C180743260013A98D /* HWMainViewController.m in Sources */,
 				2AF0D1DA1828DBD10046B74E /* UIImage+WebP.m in Sources */,
+				2A2C1365183A6AFB00C2EC89 /* MBProgressHUD.m in Sources */,
 				2AF0D1D61828DBD10046B74E /* SDWebImagePrefetcher.m in Sources */,
 				2A7DED80181F0071000A4ABA /* GDataXMLNode.m in Sources */,
 				2AF0D1D21828DBD10046B74E /* SDWebImageDecoder.m in Sources */,

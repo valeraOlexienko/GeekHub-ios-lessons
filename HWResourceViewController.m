@@ -10,6 +10,7 @@
 #import "HWMainViewController.h"
 #import "HWPodcastModel.h"
 #import "Reachability.h"
+#import "MBProgressHUD.h"
 
 @interface HWResourceViewController ()
 
@@ -38,27 +39,15 @@
 }
 
 - (IBAction)applyBtnTap:(id)sender {
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     [HWPodcastModel parsePodcastsFromUrl:urlField.text callback:^(NSArray *results){
         UIViewController *mainController = [[HWMainViewController alloc] initWithPodcasts:results];
-        [self.navigationController pushViewController:mainController animated:YES];
+        UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:mainController];
+        navigationController.topViewController.title = @"Podcasts";
+        
+        [self presentViewController:navigationController animated:YES completion:nil];
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
     }];
-    
-    
-//    Reachability* reach = [Reachability reachabilityWithHostname:@"www.google.com"];
-//    reach.reachableBlock = ^(Reachability*reach)
-//    {
-//        
-//    };
-//    reach.unreachableBlock = ^(Reachability*reach)
-//    {
-//        UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"Error!"
-//                                                          message:@"No Internet connection"
-//                                                         delegate:nil
-//                                                cancelButtonTitle:@"OK"
-//                                                otherButtonTitles:nil];
-//        [message show];
-//    };
-//    [reach startNotifier];
 }
 
 

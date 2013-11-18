@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "HWPodcastModel.h"
 
 @interface HWPodcastDetailsController : UIViewController
 
-- (id)initWithPodcastName:(NSString *)podcastNameOrNil;
+- (id)initWithPodcast:(HWPodcastModel *)podcastOrNil;
 
 @end

@@ -37,12 +37,21 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    UIBarButtonItem *cancelBtn = [[UIBarButtonItem alloc] initWithTitle:@"Cancel" style:UIBarButtonItemStylePlain target:self action:@selector(cancelBtn:)];
+    self.navigationItem.leftBarButtonItem = cancelBtn;
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - Navigation bar stuff -
+
+- (IBAction)cancelBtn:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 #pragma mark - TableView delegate stuff -
@@ -74,7 +83,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    HWPodcastDetailsController *detailsController = [[HWPodcastDetailsController alloc] initWithPodcastName: [NSString stringWithFormat:@"Podcast %li", indexPath.row]];
+    HWPodcastDetailsController *detailsController = [[HWPodcastDetailsController alloc] initWithPodcast:  podcastItems[indexPath.row]];
     self.navigationController.title = @"Podcast %li";
     [self.navigationController pushViewController:detailsController animated:YES];
 }
