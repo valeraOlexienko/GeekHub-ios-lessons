@@ -84,7 +84,6 @@
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     HWPodcastDetailsController *detailsController = [[HWPodcastDetailsController alloc] initWithPodcast:  podcastItems[indexPath.row]];
-    self.navigationController.title = @"Podcast %li";
     [self.navigationController pushViewController:detailsController animated:YES];
 }
 

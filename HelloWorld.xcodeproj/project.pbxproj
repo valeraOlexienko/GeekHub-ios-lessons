@@ -23,6 +23,9 @@
 		2A52A720180742D90013A98D /* HelloWorldTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A52A71F180742D90013A98D /* HelloWorldTests.m */; };
 		2A52A72C180743260013A98D /* HWMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A52A72A180743260013A98D /* HWMainViewController.m */; };
 		2A52A72D180743260013A98D /* HWMainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A52A72B180743260013A98D /* HWMainViewController.xib */; };
+		2A6F26A2183C9E890068B6CF /* HWPlayController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A6F26A0183C9E890068B6CF /* HWPlayController.m */; };
+		2A6F26A3183C9E890068B6CF /* HWPlayController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A6F26A1183C9E890068B6CF /* HWPlayController.xib */; };
+		2A6F26A5183C9F4B0068B6CF /* play.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A6F26A4183C9F4B0068B6CF /* play.png */; };
 		2A71EB74182FC7AE00185893 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A71EB73182FC7AE00185893 /* Reachability.m */; };
 		2A71EB79182FCC3B00185893 /* HWResourceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A71EB77182FCC3B00185893 /* HWResourceViewController.m */; };
 		2A71EB7A182FCC3C00185893 /* HWResourceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A71EB78182FCC3B00185893 /* HWResourceViewController.xib */; };
@@ -82,6 +85,10 @@
 		2A52A729180743260013A98D /* HWMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HWMainViewController.h; path = ../HWMainViewController.h; sourceTree = "<group>"; };
 		2A52A72A180743260013A98D /* HWMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HWMainViewController.m; path = ../HWMainViewController.m; sourceTree = "<group>"; };
 		2A52A72B180743260013A98D /* HWMainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HWMainViewController.xib; path = ../HWMainViewController.xib; sourceTree = "<group>"; };
+		2A6F269F183C9E890068B6CF /* HWPlayController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HWPlayController.h; path = ../HWPlayController.h; sourceTree = "<group>"; };
+		2A6F26A0183C9E890068B6CF /* HWPlayController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HWPlayController.m; path = ../HWPlayController.m; sourceTree = "<group>"; };
+		2A6F26A1183C9E890068B6CF /* HWPlayController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HWPlayController.xib; path = ../HWPlayController.xib; sourceTree = "<group>"; };
+		2A6F26A4183C9F4B0068B6CF /* play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = play.png; sourceTree = "<group>"; };
 		2A71EB72182FC7AE00185893 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		2A71EB73182FC7AE00185893 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		2A71EB76182FCC3B00185893 /* HWResourceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HWResourceViewController.h; path = ../HWResourceViewController.h; sourceTree = "<group>"; };
@@ -168,6 +175,9 @@
 		2A008F171837713F004FBA75 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				2A6F269F183C9E890068B6CF /* HWPlayController.h */,
+				2A6F26A0183C9E890068B6CF /* HWPlayController.m */,
+				2A6F26A1183C9E890068B6CF /* HWPlayController.xib */,
 				2AEEB3E01815D368008B53F3 /* HWPodcastDetailsController.h */,
 				2AEEB3E11815D368008B53F3 /* HWPodcastDetailsController.m */,
 				2AEEB3E21815D368008B53F3 /* HWPodcastDetailsController.xib */,
@@ -278,6 +288,7 @@
 		2A71EB75182FC7D200185893 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				2A6F26A4183C9F4B0068B6CF /* play.png */,
 				2AF0D1AE1828DB0E0046B74E /* placeholder.png */,
 			);
 			name = images;
@@ -396,10 +407,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				2A52A72D180743260013A98D /* HWMainViewController.xib in Resources */,
+				2A6F26A5183C9F4B0068B6CF /* play.png in Resources */,
 				2A71EB7A182FCC3C00185893 /* HWResourceViewController.xib in Resources */,
 				2A52A705180742D90013A98D /* InfoPlist.strings in Resources */,
 				2AEEB3E41815D368008B53F3 /* HWPodcastDetailsController.xib in Resources */,
 				2A52A70D180742D90013A98D /* Images.xcassets in Resources */,
+				2A6F26A3183C9E890068B6CF /* HWPlayController.xib in Resources */,
 				2AF0D1AF1828DB0E0046B74E /* placeholder.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -433,6 +446,7 @@
 				2AF0D1DB1828DBD10046B74E /* UIImageView+WebCache.m in Sources */,
 				2A52A70B180742D90013A98D /* HWAppDelegate.m in Sources */,
 				2AF0D1D41828DBD10046B74E /* SDWebImageDownloaderOperation.m in Sources */,
+				2A6F26A2183C9E890068B6CF /* HWPlayController.m in Sources */,
 				2AF0D1D81828DBD10046B74E /* UIImage+GIF.m in Sources */,
 				2A71EB74182FC7AE00185893 /* Reachability.m in Sources */,
 				2A008F1B183775FB004FBA75 /* HWPodcastModel.m in Sources */,

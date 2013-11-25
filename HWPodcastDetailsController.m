@@ -7,6 +7,8 @@
 //
 
 #import "HWPodcastDetailsController.h"
+#import "UIImageView+WebCache.h"
+#import "HWPlayController.h"
 
 @interface HWPodcastDetailsController ()
 
@@ -16,6 +18,7 @@
     
     __weak IBOutlet UILabel *podcastTitle;
     __weak IBOutlet UITextView *descriptionTextView;
+    __weak IBOutlet UIImageView *imageView;
 }
 
 HWPodcastModel *podcast = nil;
@@ -45,12 +48,19 @@ HWPodcastModel *podcast = nil;
     
     [podcastTitle setText:podcast.title];
     [descriptionTextView setText:podcast.description];
+    [imageView setImageWithURL:[NSURL URLWithString:podcast.imageUrl]
+                   placeholderImage:[UIImage imageNamed:@"placeholder.png"]];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)showPlayer:(id)sender {
+    HWPlayController *playController = [[HWPlayController alloc] init];
+    [self.navigationController pushViewController:playController animated:YES];
 }
 
 @end
